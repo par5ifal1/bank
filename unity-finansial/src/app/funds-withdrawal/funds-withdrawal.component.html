@@ -1,0 +1,30 @@
+<div class="page">
+    <header>
+      <h1>Unity Financial</h1>
+      <a class="back-button" routerLink="/">Назад</a>
+    </header>
+    <body>
+      <div class="container">
+        <div class="withdrawal-form">
+          <div class="user-info">
+            <p class="user-name" >ПІБ: {{user.name}} {{user.surname}}</p>
+            <p class="account-balance" >Поточний рахунок: {{user.currentBalance}} грн</p>
+          </div>
+          <h2>Введіть суму для зняття</h2>
+          <div class="input-container">
+            <input
+              type="number"
+              placeholder="Введіть суму"
+              class="withdraw-amount-input"
+              id="withdraw-amount-input" 
+              [(ngModel)]="amount"
+              name = "withdraw-amount-input"
+            />
+          </div>
+          <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+          <button class="withdraw-amount-button" type="submit" (click)="onConfirm()">Зняти кошти</button>
+        </div>
+      </div>
+    </body>
+  </div>
+  

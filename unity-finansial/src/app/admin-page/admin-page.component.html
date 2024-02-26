@@ -1,0 +1,19 @@
+<head>
+    <title>Адміністраторська сторінка</title>
+  </head>
+  <body>
+    <div class="admin-page">
+      <h1 class="header">Введіть кількість купюр</h1>
+      <form id="billsForm" (ngSubmit)="onSubmit()" class="bills-form">
+        <div class="input-group">
+          <label *ngFor="let denomination of denominations" class="bill-label">
+            <span class="denomination-label">{{ denomination }} грн:</span>
+            <input type="number" name="bill-{{ denomination }}" min="0" [(ngModel)]="bills[denomination]" class="bill-input">
+          </label>
+        </div> 
+        <div class="error-message" *ngIf="pintMessage">{{ pintMessage }}</div>
+        <button type="submit" class="submit-button">Зберегти</button>                 
+      </form>
+    </div>
+  </body>
+  

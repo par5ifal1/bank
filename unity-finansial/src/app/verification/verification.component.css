@@ -1,0 +1,121 @@
+header {
+    background: linear-gradient(to bottom, #0b6166, #095256);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.page{
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(#e9e9e9, #d6d6d6);
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #095256, #083f46);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 28px;
+    transition: background 0.3s ease;
+    border: 1px solid #ffffff;
+}
+
+.back-button:hover {
+    background: linear-gradient(#063c3e, #062c31);
+    color: #fff;
+}
+
+.pin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    background: linear-gradient(#0a6265, #062c31);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto; 
+    margin-top: 30vh;
+}
+
+
+
+.pin-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.pin-input {
+    display: flex;
+    justify-content: center;
+}
+
+.pin-input input {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 5px;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.pin-input input:focus {
+    border-color: #0b6166;
+    box-shadow: 0 0 20px rgba(11, 97, 102, 0.5);
+    outline: none;
+}
+
+.pin-input input::placeholder {
+    color: #ccc;
+}
+
+.pin-input input[type="password"] {
+    -webkit-text-security: disc;
+}
+
+h2{
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.confirm-button {
+    background: linear-gradient(#0a6265, #062c31);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background 0.3s ease;
+    border: 1px solid #ffffff;
+}
+
+.confirm-button:hover {
+    background: linear-gradient(#063c3e, #062c31);
+    color: #fff;
+}
+
+.error-message {
+    color: red;
+  }

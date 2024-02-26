@@ -1,0 +1,20 @@
+<div class="page">
+    <header>
+        <h1>Unity Financial</h1>
+        <a class="back-button" routerLink="/">Назад</a>
+    </header>
+    <body>
+        <div class="container">
+            <div class="top-up-form">
+                <h2>Введіть номер телефону:</h2>
+                <input type="text" id="phone-number" [(ngModel)]="phoneNumber" placeholder="Ваш номер телефону">
+                <div class="error-message" *ngIf="phoneErrorMessage">{{ phoneErrorMessage }}</div>
+
+                <h2>Введіть суму поповнення (грн):</h2>
+                <input type="text" id="top-up-amount" [(ngModel)]="amount" placeholder="Сума поповнення">
+                <div class="error-message" *ngIf="amountErrorMessage">{{ amountErrorMessage }}</div>
+                <button id="top-up-button" (click)="onConfirm()">Поповнити</button>
+            </div>
+        </div>
+    </body>
+</div>

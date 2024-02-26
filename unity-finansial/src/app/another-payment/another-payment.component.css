@@ -1,0 +1,118 @@
+header {
+    background: linear-gradient(to bottom, #0b6166, #095256);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.page{
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(#e9e9e9, #d6d6d6);
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(to bottom, #095256, #083f46);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 28px;
+    transition: background 0.3s ease;
+    border: 1px solid #ffffff;
+}
+
+.back-button:hover {
+    background: linear-gradient(#063c3e, #062c31);
+    color: #fff;
+}
+
+.services {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.services-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 1500px;
+}
+
+.service {
+    background: #fff;
+    border: 1px solid #095256;
+    border-radius: 15px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    aspect-ratio: 1/1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.service h3 {
+    font-size: 24px;
+    color: #095256;
+}
+
+.service p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #021a1b;
+}
+
+.service-button {
+    background: #095256;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    transition: background 0.3s ease;
+}
+
+.service-button:hover {
+    background: #083f46;
+}
+
+label {
+    font-size: 18px;
+    color: #095256;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.error-message{
+    color: red;
+}

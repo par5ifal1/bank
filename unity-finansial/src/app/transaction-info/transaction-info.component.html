@@ -1,0 +1,20 @@
+<div class="page">
+    <header>
+        <h1>Unity Financial</h1>
+        <a class="back-button" routerLink="/">Назад</a>
+    </header>
+    <body>
+        <div class="receipt-container">
+            <div class="receipt-header">
+                <h2>Чек</h2>
+            </div>
+            <div class="receipt-info">
+                <p><span class="label">Дата:</span> {{transaction.date}}</p>
+                <p><span class="label">ПІБ:</span> {{user.name}} {{user.surname}}</p>
+                <p><span class="label">Опис транзакції:</span> {{transaction.transferInfo}}</p>
+                <p><span class="label">Сума:</span> {{-transaction.transferAmount}} грн.</p>
+            </div>
+            <button class="logout-button" (click)="onConfirm()">Завершити сеанс</button>
+        </div>
+    </body>
+</div>

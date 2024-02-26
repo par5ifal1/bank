@@ -1,0 +1,114 @@
+.credit-card-popup{
+    width: 500px;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 30px 30px;
+    border: 2px solid #095256;
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+.credit-card-popup {
+    width: 80%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #095256;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
+}
+
+.credit-card-popup h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #095256;
+}
+
+.credit-card-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.credit-card-popup .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.credit-card-popup .input-group {
+    display: flex;
+    gap: 15px;
+}
+
+.credit-card-popup .expiry-inputs {
+    flex: 1;
+    max-width: 150px;
+}
+
+.cvv-group{
+    margin-left: auto;
+    margin-right: 18px;
+    flex: 1;
+    max-width: 50px;
+
+}
+
+.credit-card-popup .expiry-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.credit-card-popup label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #095256;
+}
+
+.credit-card-popup input {
+    width: 100%;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: 1px solid #095256;
+}
+
+.credit-card-popup button {
+    background-color: #095256;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.credit-card-popup button:hover {
+    background-color: #073b49;
+}

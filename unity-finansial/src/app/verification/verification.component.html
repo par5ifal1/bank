@@ -1,0 +1,27 @@
+
+<div class="page">
+    <header>
+        <h1>Unity Financial</h1>
+        <a class="back-button" routerLink="/">Назад</a>
+    </header>
+    <body>
+        <div class="pin-container">
+            <h2>Введіть PIN-код</h2>
+            <div class="pin-wrapper"> 
+                <div class="pin-input">
+                    <input
+                        id="pin"
+                        #pinDigit
+                        type="password"
+                        class="pin-digit"
+                        maxlength="1"
+                        *ngFor="let digit of [1, 2, 3, 4]; let i = index"
+                        (input)="onDigitInput($event, i)"
+                    />
+                </div>
+                <div class="error-message" *ngIf="pinError">{{ pinError }}</div>
+            </div>
+            <button class="confirm-button" (click)="confirmPin()" >Підтвердити</button>
+        </div>
+    </body>
+</div>

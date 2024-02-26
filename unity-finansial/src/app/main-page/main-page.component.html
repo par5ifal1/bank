@@ -1,0 +1,38 @@
+
+    <div class="page">
+    <header>
+        <h1>Unity Financial</h1>
+        <div *ngIf="isConfirmed">
+            <a class="back-button" (click)="onConfirm()">Завершити сеанс</a>
+        </div>
+    </header>
+    <body>
+        <div class="container">
+            <div class="left-column">
+                <div class="href-holder" (click)="openNoCardDialog('/phone-payment')">
+                    <img src="./assets/images/animatedPhone.gif" width="200px" height="200px">
+                    <a >Поповнити мобільний</a>
+                </div>
+                <div class="href-holder" (click)="openNoCardDialog('/withdraw-funds')">
+                    <img src="./assets/images/animatedCard.gif" width="200px" height="200px">
+                    <a >Зняти кошти</a>
+                </div>
+                <div class="href-holder" (click)="openNoCardDialog('/another-payment')">
+                    <img src="./assets/images/animatedAnother.gif" width="200px" height="200px">
+                    <a >Інші платежі</a>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="block">
+                    <a [class.small-text]="isConfirmed">{{ isConfirmed ? user.name + ' ' + user.surname : 'Вставте картку' }}</a>
+                    <div *ngIf="!isConfirmed">
+                        <img (click)="openInsertCardDialog()" [src]="'./assets/images/animatedInsert.gif'" width="400px" height="400px">    
+                    </div>
+                    <div *ngIf="isConfirmed">
+                        <img [src]="'./assets/images/ok.gif'" width="400px" height="400px">    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
