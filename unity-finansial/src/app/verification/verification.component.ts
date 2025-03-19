@@ -6,6 +6,7 @@ import { UserVerificationService } from '../services/user-verification.services'
 import { AdminDetectionService } from '../services/admin-detection.services';
 import { catchError, timeout } from 'rxjs/operators';
 import { throwError, TimeoutError  } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Component({
   selector: 'app-verification',
@@ -76,7 +77,7 @@ export class VerificationComponent{
         atmKey:this.pin
       }
 
-      this.http.get("http://localhost:8080/compare",  { params: atmData })
+      this.http.get(environment.apiUrl + "/compare",  { params: atmData })
      .subscribe((val:any) => {
         if(!val){
           this.pinError = 'PIN-код введено неправильно!';
@@ -95,7 +96,7 @@ export class VerificationComponent{
         pin:this.pin
       }
 
-      this.http.get("http://localhost:8080/user/pin",  { params: data })
+      this.http.get(environment.apiUrl + "/user/pin",  { params: data })
       .subscribe((val:any) => {
           this.userVerificationService.setVeriefication(true)
           this.userVerificationService.setUser(val);

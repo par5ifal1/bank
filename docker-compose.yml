@@ -1,0 +1,46 @@
+services:
+  frontend:
+    build:
+      context: ./unity-finansial
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80" # або будь-який інший вільний порт
+
+  backend:
+    build:
+      context: ./backend/Bank
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://mysql:3306/mysql-db"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "rootpassword"
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  mysql:
+    image: mysql:8.0.35
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mysql-db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      # This folder will contain an init script for creating the second DB (keycloak)
+#      - ./config/initdb:/docker-entrypoint-initdb.d
+      #networks:
+      #- keycloak-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "--password=rootpassword" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  db_data:

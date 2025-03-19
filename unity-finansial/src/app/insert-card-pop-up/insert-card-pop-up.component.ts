@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog'
 import { CardDetectionService } from '../services/card-detection.services';
 import { catchError, timeout } from 'rxjs/operators';
 import { throwError, TimeoutError  } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Component({
   selector: 'app-insert-card-pop-up',
@@ -34,7 +35,7 @@ export class InsertCardPopUpComponent {
                 cardDate:this.month + this.year,
                 cardCVV:this.cardCVV
             }
-            this.http.get("http://localhost:8080/user",  { params: data })
+            this.http.get(environment.apiUrl + "/user",  { params: data })
             .subscribe((val:any) => {
                 if(val[0] && !val[1]){
 

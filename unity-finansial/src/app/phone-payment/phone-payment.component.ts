@@ -7,6 +7,7 @@ import { CardDetectionService } from '../services/card-detection.services';
 import { TransactionService } from '../services/transaction.services';
 import { catchError, timeout } from 'rxjs/operators';
 import { throwError, TimeoutError  } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Component({
     selector: 'app-phone-payment',
@@ -98,7 +99,7 @@ import { throwError, TimeoutError  } from 'rxjs';
         cardNumber:this.user.cardNumber
       }
 
-      this.http.post("http://localhost:8080/transactions/new", data)
+      this.http.post(environment.apiUrl + "/transactions/new", data)
       .pipe(
         timeout(500000),
         catchError((error: any) => {
@@ -109,7 +110,7 @@ import { throwError, TimeoutError  } from 'rxjs';
       .subscribe((val:any) => {
       this.transactionService.setTransaction(val)
 
-        this.http.get("http://localhost:8080/transactions/user", { params: userData }).subscribe((val:any) => {
+        this.http.get(environment.apiUrl + "/transactions/user", { params: userData }).subscribe((val:any) => {
           this.userVerificationService.setUser(val)
           this.user = this.userVerificationService.getUser()
           this.router.navigate(["/transaction-info"]);

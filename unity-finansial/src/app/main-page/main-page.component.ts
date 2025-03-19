@@ -11,6 +11,7 @@ import { WarningPopUpComponent } from '../warning-pop-up/warning-pop-up.componen
 import { TransactionService } from '../services/transaction.services';
 import { catchError, timeout } from 'rxjs/operators';
 import { throwError, TimeoutError  } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Component({
     selector: 'app-main-page',
@@ -47,7 +48,7 @@ import { throwError, TimeoutError  } from 'rxjs';
       this.adminDetectionService = this.adminService
       this.isATMOpened = this.adminDetectionService.getIsOpened();
 
-      this.http.get("http://localhost:8080/1")
+      this.http.get(environment.apiUrl + "/1")
       .pipe(
         timeout(500000),
         catchError((error: any) => {
@@ -84,7 +85,7 @@ import { throwError, TimeoutError  } from 'rxjs';
         this.isConfirmed = true;
       }
 
-    this.http.get("http://localhost:8080/1/bills").subscribe((val:any) => {
+    this.http.get(environment.apiUrl + "/1/bills").subscribe((val:any) => {
       this.bills = val;
     }, (error) => {
       console.error('Request error:', error);

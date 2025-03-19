@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AdminDetectionService } from '../services/admin-detection.services';
 import { catchError, timeout } from 'rxjs/operators';
 import { throwError, TimeoutError  } from 'rxjs';
+import { environment } from 'src/environment';
 
 @Component({
   selector: 'app-admin-page',
@@ -48,7 +49,7 @@ export class AdminPageComponent {
       billsDTOList:this.billsDTOList
     }
 
-    this.http.post("http://localhost:8080/1/postBills", data)
+    this.http.post(environment.apiUrl + "/1/postBills", data)
     .pipe(
       timeout(500000),
       catchError((error: any) => {
@@ -60,7 +61,7 @@ export class AdminPageComponent {
       console.log("Succsesfull");
       this.pintMessage = "Купюри додано до банкомату!"
 
-      this.http.post("http://localhost:8080/1/close", {}).subscribe((val:any) => {
+      this.http.post(environment.apiUrl + "/1/close", {}).subscribe((val:any) => {
       }, () => {
         console.log("There is error")
       });
